@@ -1,3 +1,3 @@
 export interface Config {
-  TELEGRAM_BOT_TOKEN: string;
+  TELEGRAM_BOT_API_TOKEN: string;
 }
