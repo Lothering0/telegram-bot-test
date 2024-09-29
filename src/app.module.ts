@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
-import { TelegramDynamicModule } from './infrastructure/telegram/telegram.dynamic-module';
+import { TelegramModule } from './infrastructure/telegram/telegram.module';
 import { ConfigDynamicModule } from './infrastructure/config/config.dynamic-module';
 
 @Module({
-  imports: [ConfigDynamicModule, TelegramDynamicModule],
+  imports: [ConfigDynamicModule, TelegramModule],
   controllers: [AppController],
   providers: [AppService],
 })
