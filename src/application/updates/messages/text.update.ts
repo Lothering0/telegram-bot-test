@@ -13,8 +13,8 @@ export class TextUpdate extends Telegraf<Context> {
   }
 
   @On('text')
-  handleStart(@Message('text') userName: string, @Ctx() context: Context) {
-    const currentRate = this.exchangeRateService.getCurrentRateFor(userName);
+  async handleStart(@Message('text') userName: string, @Ctx() context: Context) {
+    const currentRate = await this.exchangeRateService.getCurrentRateFor(userName);
     context.reply(currentRate);
   }
 }
