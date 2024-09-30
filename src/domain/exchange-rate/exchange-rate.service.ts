@@ -6,8 +6,12 @@ import { Inject, Injectable } from '@nestjs/common';
 export class ExchangeRateService {
   constructor(@Inject(EXCHANGE_RATE_INJECTION_TOKEN) private readonly exchangeRateApi: ExchangeRateApi) {}
 
+  getCurrentRate() {
+    return this.exchangeRateApi.fetchRateRubToUsd();
+  }
+
   async getCurrentRateFor(userName: string) {
-    const rate = await this.exchangeRateApi.fetchRateRubToUsd();
+    const rate = await this.getCurrentRate();
     return `Рад знакомству, ${userName}! Курс доллара сегодня - ${rate} ₽`;
   }
 }

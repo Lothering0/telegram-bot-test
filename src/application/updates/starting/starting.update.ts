@@ -9,7 +9,8 @@ export class StartingUpdate extends Telegraf<Context> {
     @InjectBot() bot: Telegraf<Context>,
     private readonly startingService: StartingService,
   ) {
-    super(bot.telegram.token, bot.telegram.options as any);
+    const { token, options } = bot.telegram;
+    super(token, options as any);
   }
 
   @Start()

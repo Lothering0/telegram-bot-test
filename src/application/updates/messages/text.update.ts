@@ -9,7 +9,8 @@ export class TextUpdate extends Telegraf<Context> {
     @InjectBot() bot: Telegraf<Context>,
     private readonly exchangeRateService: ExchangeRateService,
   ) {
-    super(bot.telegram.token, bot.telegram.options as any);
+    const { token, options } = bot.telegram;
+    super(token, options as any);
   }
 
   @On('text')
