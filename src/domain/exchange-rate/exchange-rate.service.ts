@@ -12,6 +12,6 @@ export class ExchangeRateService {
 
   async getCurrentRateFor(userName: string) {
     const rate = await this.getCurrentRate();
-    return `Рад знакомству, ${userName}! Курс доллара сегодня - ${rate} ₽`;
+    return `Nice to meet you, ${userName}! Dollar exchange rate today - ${rate} ₽`;
   }
 }
